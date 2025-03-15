@@ -1,10 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import Body from "./components/Body.jsx";
 
 function App() {
   return (
     <div className="">
-        <h1 className="text-3xl bg-blue-600">Namaste React</h1>
+
+          <Body/>
+
     </div>
   );
 }
