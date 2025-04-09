@@ -1,9 +1,11 @@
 const Footer = () =>{
 
     return(
-        <>
-            <h1>footer</h1>
-        </>
+        <div>
+            <h1 
+            className="bg-red text-white"
+            >NETFLIX</h1>
+        </div>
     );
 }
 

@@ -1,3 +1,7 @@
+## Login.jsx Logic notes Lecture 1
+
+
+```js
   import { useState, useRef } from "react";
   import { checkValidateData } from "../Utils/Validate";
   import { createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile } from "firebase/auth";
@@ -43,7 +47,7 @@
       );
       setErrorMsg(message);
 
-      if (message) return; //if (message(means error)) then return from this function
+      if (message) return; //if(message(means error))then return from this function
 
       if (!isSignInForm) { //if not a signInForm then -:
         //Sign-up Logic
@@ -178,3 +182,4 @@
   };
 
   export default Login;
+```
