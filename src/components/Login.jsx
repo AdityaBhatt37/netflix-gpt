@@ -13,11 +13,17 @@
 
   import Header from "./Header.jsx";
   import { addUser } from "../Utils/Redux/userSlice.jsx";
+
+  import { Login_background_img } from "../Utils/constants.js";
+
+  import {Profile_photo_of_header} from "../Utils/constants.js";
+
+
   
   const Login = () => {
 
-    const dispatch = useDispatch();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [isSignInForm, setIsSignInForm] = useState(true);
 
@@ -29,11 +35,7 @@
     const [errorMsg, setErrorMsg] = useState(null);
     
     
-    const toggleSignInForm = () => {
-      setIsSignInForm(!isSignInForm);
-    };
-
-
+    
     const handleButtonClick = () => {
 
       //form validation
@@ -53,8 +55,8 @@
           email.current.value, //Api required email value
           password.current.value // Api required the password value
         )
-          .then((userCredential) => { //runs if my signUp si success
-
+          .then((userCredential) => { //runs if my signUp is success
+            
             const user = userCredential.user;//If my signup is success it gives us user object
                                             //This user object give us the access token etc..
                                             //denotes that success full of signup
@@ -62,22 +64,32 @@
 
           
 
-            updateProfile(auth.currentUser, { //use of the updateProfile Api and (currentUser is user).
+           updateProfile(user, { //use of the updateProfile Api.
               displayName: name.current.value,
-              photoURL: "https://avatars.githubusercontent.com/u/142151739?v=4&size=64",
+              photoURL: Profile_photo_of_header,
 
             }).then(() => {
+
+              // 👇 Wait for Firebase to reload the latest user profile
+             // await auth.currentUser.reload();
               // Profile updated!
-               const{ uid,email,displayName,photoURL} = auth.currentUser; //auth.currentUser give us the updated user object because the above user is not the updated one. 
-               dispatch(addUser({ uid: uid , email: email, displayName: displayName, photoURL: photoURL })); //dispatching an action again from here with the updated user object values.
-              navigate("/browse")//Navigate to "/browse" if profile Updated success
+                const{ uid,email,displayName,photoURL} = auth.currentUser; //auth.currentUser give us the updated user object because the above user is not the updated one. 
+               dispatch(addUser({ 
+                 uid: uid ,
+                 email: email, 
+                 displayName: displayName, 
+                 photoURL: photoURL })); //dispatching an action again from here with the updated user object values.
+                 navigate("/browse")//Navigate to "/browse" if profile Updated success
+                        
+             
+             
             }).catch((error) => {
               // An error occurred
               setErrorMsg(error.message);
             });
 
-            navigate("/browse");//Navigate to "/browse" if SignUp success
-            console.log(user);//consoling the user object
+            //navigate("/browse");//Navigate to "/browse" if SignUp success
+            //console.log(user);//consoling the user object
 
           })
           .catch((error) => { //If there is any error in the signUp this error object give us errors
@@ -98,9 +110,9 @@
           .then((userCredential) => { //runs when signIn success
         
             const user = userCredential.user;
-            console.log(user);
-            navigate("/browse"); //navigate to /browse if SignIn Success
-            return alert("sucessfull sign IN ");  
+            // console.log(user);
+            //navigate("/browse"); //navigate to /browse if SignIn Success
+            // return alert("sucessfull sign IN ");  
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -111,12 +123,18 @@
     };
 
 
+    const toggleSignInForm = () => {
+      setIsSignInForm(!isSignInForm);
+    };
+
+
+
     return (
       <>
       <Header/>
-      <div className="relative ">
+      <div className="relative "> 
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/42a0bce6-fc59-4c1c-b335-7196a59ae9ab/web_tall_panel/IN-en-20250303-TRIFECTA-perspective_8d2f60cf-007f-4f25-99b0-7c0b77f38bc1_large.jpg"
+          src= {Login_background_img}
           alt="login_background_img"
         />
 
