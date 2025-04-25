@@ -79,7 +79,7 @@
                  email: email, 
                  displayName: displayName, 
                  photoURL: photoURL })); //dispatching an action again from here with the updated user object values.
-                 navigate("/browse")//Navigate to "/browse" if profile Updated success
+                 //navigate("/browse")//Navigate to "/browse" if profile Updated success
                         
              
              

@@ -21,11 +21,18 @@
 - BugFix: If the user is not logged in Redirect/browse to login page and vice-versa
 - Add all the hardcoded data in your constants files
 - Add hardcoded files to the constants files
-<!-- - Register  TMDB API & create an app & get access token
-- Get Data from TMDB now Playing movies list API -->
-- Register Trket website and create a new App to get the free Api access.
-- fetching the data from the API of Trket website and store it inside the movies slice
-
+- Register  TMDB API & create an app & get access token
+- Get Data from TMDB now Playing movies list API
+<!-- - Register Trket website and create a new App to get the free Api access.
+- fetching the data from the API of Trket website and store it inside the movies slice -->
+- Custom Hook for Now Playing Movies
+- Create movieSlice
+- Update Store with movies Data
+- Planning for MainContainer & secondary container
+- Fetch Data for Trailer Video
+- Update Store with Trailer Video Data
+- Embedded the Youtube video and make it autoplay and mute
+- Tailwind classes to make Main Container look awesome
 
 
 

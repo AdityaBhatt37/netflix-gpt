@@ -5,10 +5,9 @@ export const Login_background_img = "https://assets.nflxext.com/ffe/siteui/vlv3/
 export const Profile_photo_of_header = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9gY-kRqTGVGalxv1xZ-lLPXrSSz5H7mTAhbM03WCQj33u2-1g&s";
 
 export const ApiOptions = {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "trakt-api-version": "2",
-            "trakt-api-key": "05d466c28c209dc13eff71642a3985aa04de85c893465d3808f4edddbe53818d" // Put your full Client ID here
-          }
-        };
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZmZlMjI3N2U4ZjcxY2Y1NTU1MDEzNDBkNDI2MWEzNiIsIm5iZiI6MTc0NDI4Mjk3MC45MzEsInN1YiI6IjY3ZjdhNTVhMzE3NzUyNzZkNmQ5ODQxMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.f0oxNfTUUizyFuNi4Oig_ic0pWeTzm41eeXmigtyVEI  '
+    }
+        }; 
